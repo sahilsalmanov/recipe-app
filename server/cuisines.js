@@ -302,6 +302,7 @@ const cuisines = [
     { value: "Samoan cuisine", label: "Samoan cuisine" },
     { value: "Tuvaluan cuisine", label: "Tuvaluan cuisine" },
     { value: "Wallis and Futuna cuisine", label: "Wallis and Futuna cuisine" },
+    { value: "Wallis and Futuna cuisine", label: "Wallis and Futuna cuisine" },
   ]
   
   export default cuisines
