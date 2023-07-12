@@ -78,4 +78,4 @@ export const editRecipe = async (req, res) => {
     } catch (err) {
       res.status(404).json({ msg: err.message })
     }
-  }
+  }     
