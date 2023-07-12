@@ -13,6 +13,7 @@ export const register = async (req, res) => {
     if (checkUser) {
       return res.status(400).send({ err: "User already exists." })
     }
+    
     const image =
       req.file &&
       (await cloudinary.uploader.upload(req.file.path, {
@@ -21,6 +22,7 @@ export const register = async (req, res) => {
           { width: 200, height: 200, gravity: "face", crop: "thumb" },
         ],
       }))
+
     const salt = await bcrypt.genSalt()
     const passwordHash = await bcrypt.hash(password, salt)
     const newUser = new User({
