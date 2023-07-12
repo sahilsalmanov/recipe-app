@@ -69,3 +69,13 @@ export const editRecipe = async (req, res) => {
       res.status(404).json({ msg: err.message })
     }
   }
+
+  export const getRecipe = async (req, res) => {
+    const { recipeId } = req.params
+    try {
+      const recipe = await Recipe.findById(recipeId).populate("author")
+      res.status(200).json(recipe)
+    } catch (err) {
+      res.status(404).json({ msg: err.message })
+    }
+  }
