@@ -35,7 +35,7 @@ function RegisterPage() {
       return
     }
     navigate("/")
-    toast.success("Thank you for joining us! You can sign in now.", {
+    toast.success("You are registered! You can sign in now.", {
       position: toast.POSITION.TOP_CENTER,
     })
     setIsLoading(false)
@@ -101,7 +101,7 @@ function RegisterPage() {
         >
           {formik.touched.email && formik.errors.email
             ? formik.errors.email
-            : formik.touched.email && "Looking good!"}
+            : formik.touched.email}
         </p>
       </div>
       <div>
@@ -109,7 +109,6 @@ function RegisterPage() {
         <input
           type="password"
           name="password"
-          placeholder="* * * * * *"
           autoComplete="current-password"
           onChange={formik.handleChange}
           value={formik.values.password}
@@ -124,7 +123,7 @@ function RegisterPage() {
         >
           {formik.touched.password && formik.errors.password
             ? formik.errors.password
-            : formik.touched.password && "Looking good!"}
+            : formik.touched.password}
         </p>
       </div>
       <div>
@@ -132,7 +131,6 @@ function RegisterPage() {
         <input
           type="text"
           name="name"
-          placeholder="John"
           onChange={formik.handleChange}
           value={formik.values.name}
           onBlur={formik.handleBlur}
@@ -146,7 +144,7 @@ function RegisterPage() {
         >
           {formik.touched.name && formik.errors.name
             ? formik.errors.name
-            : formik.touched.name && "Looking good!"}
+            : formik.touched.name}
         </p>
       </div>
       <div>
@@ -192,7 +190,6 @@ function RegisterPage() {
         <input
           type="number"
           name="age"
-          placeholder="24"
           onChange={formik.handleChange}
           value={formik.values.age}
           onBlur={formik.handleBlur}
@@ -203,7 +200,7 @@ function RegisterPage() {
         <input
           type="text"
           name="location"
-          placeholder="London, UK"
+          placeholder="Baku, Azerbaijan"
           onChange={formik.handleChange}
           value={formik.values.location}
           onBlur={formik.handleBlur}
