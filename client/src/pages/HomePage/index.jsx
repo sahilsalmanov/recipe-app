@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 import { AnimatePresence, motion } from "framer-motion"
 import Hero from "../../components/Hero"
-import RecipePlaceholder from "../../components/RecipePlaceholder"
+import RecipePlaceholder from "../../components/RecipePagePlaceholder"
 
 function HomePage() {
   const [popularRecipes, setPopularRecipes] = useState([])

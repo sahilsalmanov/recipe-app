@@ -37,11 +37,11 @@ function Navbar() {
       <Link to="/">
         <div className="group flex items-center">
           <img
-            className="h-8 transition-all group-hover:rotate-[360deg] lg:h-12"
+            className="h-8 transition-all lg:h-12"
             src={logo}
             alt=""
           />
-          <p className="mx-4 font-['Lobster'] text-xl font-normal text-light-red transition-all group-hover:-skew-y-12 group-hover:brightness-125 lg:text-2xl">
+          <p className="mx-4 font-['Lobster'] text-xl font-normal text-light-red transition-all">
             receta
           </p>
         </div>

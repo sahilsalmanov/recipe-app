@@ -22,7 +22,7 @@ function NavItems() {
         <li className="relative">
           <Link
             to="/"
-            className="after:absolute after:top-full after:left-0 after:h-1 after:w-0 after:bg-red-500 after:transition-all after:hover:w-full"
+            className="after:absolute after:top-full after:left-0 after:h-1 after:w-0 after:bg-red-500 after:transition-all"
           >
             Dashboard
           </Link>
@@ -30,7 +30,7 @@ function NavItems() {
         <li className="relative">
           <Link
             to="/recipes"
-            className="after:absolute after:top-full after:left-0 after:h-1 after:w-0 after:bg-red-500 after:transition-all after:hover:w-full"
+            className="after:absolute after:top-full after:left-0 after:h-1 after:w-0 after:bg-red-500 after:transition-all"
           >
             All recipes
           </Link>
