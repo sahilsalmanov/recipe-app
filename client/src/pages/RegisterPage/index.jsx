@@ -206,9 +206,6 @@ function RegisterPage() {
           onBlur={formik.handleBlur}
         />
       </div>
-      <div className="col-span-2 mt-auto w-full border-b border-zinc-700 text-xs text-zinc-500">
-        * required
-      </div>
       <button
         disabled={isLoading && true}
         type="submit"

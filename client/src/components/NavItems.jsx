@@ -24,7 +24,7 @@ function NavItems() {
             to="/"
             className="after:absolute after:top-full after:left-0 after:h-1 after:w-0 after:bg-red-500 after:transition-all"
           >
-            Dashboard
+            Home
           </Link>
         </li>
         <li className="relative">
