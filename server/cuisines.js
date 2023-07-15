@@ -22,8 +22,7 @@ const cuisines = [
     { value: "Cameroonian cuisine", label: "Cameroonian cuisine" },
     { value: "Centrafrican cuisine", label: "Centrafrican cuisine" },
     { value: "Chadian cuisine", label: "Chadian cuisine" },
-    {
-      value: "Democratic Republic of the Congo cuisine",
+    { value: "Democratic Republic of the Congo cuisine",
       label: "Democratic Republic of the Congo cuisine",
     },
     {
