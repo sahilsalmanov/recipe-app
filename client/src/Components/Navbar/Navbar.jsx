@@ -7,6 +7,7 @@ import { useActiveUserContext } from "../../hooks/useActiveUserContext";
 import SearchResult from "../SearchResult/SearchResult";
 import Overlay from "../Overlay/Overlay";
 
+
 const Navbar = () => {
   const { activeUser } = useActiveUserContext();
   const navigate = new useNavigate();
@@ -47,7 +48,9 @@ const Navbar = () => {
 
       <div className="left">
         <div className="logo">
-          <Link to="/">Receta</Link>
+          <Link to="/">
+            <span style={{color:"#c99e39"}} className="logo-text">Receta</span> {/* Receta metnini burada ekleyin */}
+          </Link>
         </div>
       </div>
 
@@ -73,9 +76,9 @@ const Navbar = () => {
         <div className="menu-link">
           {activeUser ? (
             <>
-              <Link to="/" className='ml'>Home</Link>
-              <Link to="/create-post" className='ml'>Create Recipe</Link>
-              <Link to="/" onClick={handleLogout} className='ml'>
+              <Link style={{color:"#c99e39"}} to="/" className='ml'>Home</Link>
+              <Link style={{color:"#c99e39"}} to="/create-post" className='ml'>Create Recipe</Link>
+              <Link style={{color:"#c99e39"}} to="/" onClick={handleLogout} className='ml'>
                 Logout
               </Link>
               <Link to={`/profile/${activeUser?._id}`} className='nav_profile_img'>
@@ -84,8 +87,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login" className='ml'>Login</Link>
-              <Link to="/register" className='ml'>Register</Link>
+              <Link to="/login" style={{color:"#c99e39",fontSize:"20px",fontWeight:"bold"}} className='ml'>Login</Link>
+              <Link to="/register" style={{color:"#c99e39",fontSize:"20px",fontWeight:"bold"}} className='ml'>Register</Link>
             </>
           )}
         </div>
