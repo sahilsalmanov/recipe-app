@@ -53,7 +53,6 @@
 }
 
 
-/* author */
 .blog_post_author_single{
     width: 100%;
     display: flex;
@@ -99,13 +98,15 @@
 }
 .redtext {
     color: rgb(208, 133, 48);
-    font-weight: 600;
-    font-size: 20px;
+     font-weight: 600;
+     font-size: 20px;
+    
+
 }
 .ordinary {
    margin-left: 30px;
 }
-.reddiv {
+.red-content {
     width: 150px;
     height: 7px;
     background-color: rgb(208, 133, 48);

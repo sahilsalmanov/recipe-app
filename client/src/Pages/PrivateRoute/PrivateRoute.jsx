@@ -1,7 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import React, {useState, useEffect} from "react";
-import Swal from "sweetalert2";
 import { useNavigate, Outlet } from "react-router-dom";
 
 const PrivateRoute = () => {

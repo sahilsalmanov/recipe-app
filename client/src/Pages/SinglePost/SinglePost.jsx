@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { usePostsContext } from "../../hooks/usePostsContext";
 import "./SinglePost.css";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -11,12 +11,10 @@ import Comments from "../../Components/Comments/Comments";
 
 import { useUsersContext } from "../../hooks/useUsersContext";
 import { useActiveUserContext } from "../../hooks/useActiveUserContext";
-import { useSelector } from "react-redux";
 import Footer from "../../Components/Footer/Footer";
 
 const SinglePost = () => {
   const { dispatch } = usePostsContext();
-  const posts = useSelector((state) => state.post.posts);
   const { users } = useUsersContext();
   const { activeUser } = useActiveUserContext();
   
@@ -27,9 +25,6 @@ const SinglePost = () => {
   const [likeCount, setLikeCount] = useState(0);
   const [alredyLiked, setAlreadyLiked] = useState("fa-solid fa-heart red");
   const [nonLiked, setNonLiked] = useState("far fa-heart");
-  const [likeStyle, setLikeStyle] = useState("far fa-heart");
-
-  const currentBlogPost = useSelector((state) => state.post.currentPost);
 
 
   const handleDelete = async (id) => {
@@ -197,33 +192,33 @@ const SinglePost = () => {
             </div>
 
             <div className="single_post_description_wrapper">
-              <p className="redtext">Description</p>
+              <p className="red-text">Description</p>
               <p>{currentPost ? currentPost.description : ""}</p>
             </div>
            
            <div className="general">
            <div className="single_post_description_wrapper">
-              <p className="redtext">Preparation time: </p>
+              <p className="red-text">Preparation time: </p>
            <p className="ordinary">{currentPost ? currentPost.preparation + ' minute' : ""}</p>
-           <div className="reddiv"></div>
+           <div className="red-content"></div>
             </div>
             <div className="single_post_description_wrapper">
-              <p className="redtext">Cooking time: </p>
+              <p className="red-text">Cooking time: </p>
            <p className="ordinary">{currentPost ? currentPost.cooking + ' minute' : ""}</p>
-           <div className="reddiv"></div>
+           <div className="red-content"></div>
             </div>
             <div className="single_post_description_wrapper">
-              <p className="redtext">Person number: </p>
+              <p className="red-text">Person number: </p>
               <p className="ordinary">{currentPost ?  currentPost.person + ' person' : ""}</p>
-              <div className="reddiv"></div>
+              <div className="red-content"></div>
             </div>
            </div>
             <div className="single_post_description_wrapper">
-              <p className="redtext">Preparation Process: </p>
+              <p className="red-text">Preparation Process: </p>
               <p>{currentPost ? currentPost.preparationWork : ""}</p>
             </div>
             <div className="single_post_description_wrapper">
-              <p className="redtext"> Ingredients: </p>
+              <p className="red-text"> Ingredients: </p>
               <p>{currentPost ? currentPost.ingredients : ""}</p>
             </div>
             <Comments post={currentPost} />

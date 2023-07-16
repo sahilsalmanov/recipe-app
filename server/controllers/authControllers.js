@@ -19,7 +19,7 @@ const get_register = async (req, res) =>{
 
 const post_register = async (req, res) =>{
    
-    const { name, email, password, cPassword, activeUserId } = req.body;
+    const { name, email, password, cPassword } = req.body;
 
     try{
         const isEmail = await userModel.findOne({email : email});

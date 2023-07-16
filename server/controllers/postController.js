@@ -32,7 +32,7 @@ const create_post = async (req, res) => {
           if (savePost) {
             res
               .status(200)
-              .json({ post: savePost, msg: "Post created successfully !!" });
+              .json({ post: savePost, msg: "Recipe created successfully !!" });
 
           } else {
             res.json({ msg: "Something wents wrong" });
@@ -114,7 +114,7 @@ const update_post = async (req, res) => {
           if (savePost) {
             res
               .status(200)
-              .json({ post: savePost, msg: "Post created successfully !!" });
+              .json({ post: savePost, msg: "Recipe created successfully !!" });
 
           } else {
             res.json({ msg: "Something wents wrong" });
@@ -143,7 +143,7 @@ const update_post = async (req, res) => {
        });
 
        if(updatePost){
-        res.status(200).json({msg : "Post updated successfully", post : updatePost});
+        res.status(200).json({msg : "Recipe updated successfully", post : updatePost});
        }
        else{
         res.json({msg : "Post not updated , Something wents wrong"});

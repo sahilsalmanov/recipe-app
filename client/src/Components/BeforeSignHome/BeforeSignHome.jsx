@@ -1,6 +1,6 @@
 import React from 'react'
 import "./BeforeSignHome.css";
-import ControlledCarousel from '../Carosel/ControlledCarousel';
+import ControlledCarousel from '../Carousel/ControlledCarousel';
 
 const BeforeSignHome = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { usePostsContext } from "./../../hooks/usePostsContext";
+import { usePostsContext } from "../../hooks/usePostsContext";
 import "./ControlledCarousel.css";
 import { useNavigate } from "react-router-dom";
 
@@ -39,10 +39,7 @@ function ControlledCarousel() {
                       </div>
                       
                       
-                      <p>{post.name}</p>
-                      <p className="blog-description-carousel">{post.description}</p>
-
-                      
+                      <p>{post.name}</p>    
                 </div>
               </Carousel.Item>
             )

@@ -6,6 +6,7 @@
   padding: 10px 200px;
   box-sizing: border-box;
   background-color: #222324 ;
+
 }
 
 .home_wrapper{
@@ -16,7 +17,7 @@
 .home_wrapper .leftHome{
   display: flex;
   flex-wrap: wrap;
-    flex: 3;
+    flex: 7;
     height: 90vh;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -41,7 +42,7 @@
   }  */
 
 .home_wrapper .rightHome{
-    flex: 1;
+    flex: 2;
     margin-left: 10px;
     color:#c99e39;
     font-size: 15px;

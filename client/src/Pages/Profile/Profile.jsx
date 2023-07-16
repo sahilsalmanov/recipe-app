@@ -6,10 +6,8 @@ import Swal from "sweetalert2";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { useUsersContext } from "../../hooks/useUsersContext";
 import { usePostsContext } from "../../hooks/usePostsContext";
 import { useActiveUserContext } from "../../hooks/useActiveUserContext";
-
 import { format } from "timeago.js";
 import PageLoader from "../PageLoader/PageLoader";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,8 +18,6 @@ const Profile = () => {
   const { dispatch } = usePostsContext();
   const postDispatch = useDispatch();
   const { activeUser } = useActiveUserContext();
-  console.log(id);
-  const { users } = useUsersContext();
   const [postAuthor, setPostAuthor] = useState();
   const [profileImage, setProfileImage] = useState();
 

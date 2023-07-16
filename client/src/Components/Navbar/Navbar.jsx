@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import Cookies from "js-cookie";
@@ -6,18 +6,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useActiveUserContext } from "../../hooks/useActiveUserContext";
 import SearchResult from "../SearchResult/SearchResult";
 import Overlay from "../Overlay/Overlay";
-import { useSearchResultContext } from "../../hooks/useSearchContext";
 
 
 const Navbar = () => {
-  const { searchResultStyle, searchResultDispatch } = useSearchResultContext();
   const { activeUser } = useActiveUserContext();
-
   const navigate = new useNavigate();
   const [searchValue, setSearchValue] = useState();
-  const [activeSearch, setActiveSearch] = useState();
-  const [searchResultContainerStyle, setSearchResultContainerStyle] =
-    useState("hideSearch");
+  const [searchResultContainerStyle, setSearchResultContainerStyle] = useState("hideSearch");
 
   const handleLogout = () => {
     Cookies.remove("jwt");
