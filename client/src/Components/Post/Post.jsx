@@ -16,9 +16,6 @@ const Post = ({post}) => {
             const res = await axios.delete(`/api/posts/delete-post/${post._id}`);
 
             if(res.status === 200){
-                console.log(res.data.post)
-                console.log("Post deleted")
-
                 dispatch({type :"DELETE_POST",  payload : res.data.post})
             }
             else{

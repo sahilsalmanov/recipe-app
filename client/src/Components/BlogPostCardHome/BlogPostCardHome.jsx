@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import "./BlogPostCardHome.css";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { usePostsContext } from '../../hooks/usePostsContext';
@@ -35,13 +33,11 @@ const BlogPostCardHome = ({post}) => {
     }
 
     const handleDelete = async (id) =>{
-        console.log(id)
 
         try{
            const res = await axios.delete(`/api/posts/delete-post/${id}`);
 
            if(res.status === 200){
-            console.log(res.data);
             dispatch({type : "DELETE_POST", payload : res.data.post})
            }
            else{
@@ -54,13 +50,11 @@ const BlogPostCardHome = ({post}) => {
     }
 
     const handleLikeDislike = async (postId) =>{
-        console.log(postId)
 
         try{
             const res = await axios.post(`/api/posts/like-dislike/${postId}`, {userId : activeUser._id });
 
             if(res.status == 200){
-                console.log(res.data.msg);
                 setLikeCount(res.data.liked ? likeCount + 1 : likeCount - 1);
             }
             else{

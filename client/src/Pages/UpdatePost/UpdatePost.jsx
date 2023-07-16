@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import Loader from "../Loader/Loader";
 import "./UpdatePost.css";
 import { usePostsContext } from "../../hooks/usePostsContext";
 import Footer from "../../Components/Footer/Footer";
@@ -12,7 +11,6 @@ const UpdatePost = () => {
   const [post, setPost] = useState({});
 
   const { id } = useParams();
-  console.log(id);
 
 
   const navigate = new useNavigate();
@@ -51,7 +49,6 @@ const UpdatePost = () => {
       })
       .then((res) => {
         if (res.status === 200) {
-          console.log(res.data.post);
           Swal.fire("Greate", res.data.msg, "success");
           dispatch({type : "UPDATE_POST", payload : res.data.post})
 

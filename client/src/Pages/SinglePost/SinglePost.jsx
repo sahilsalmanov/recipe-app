@@ -34,13 +34,10 @@ const SinglePost = () => {
 
   const handleDelete = async (id) => {
 
-    console.log(id);
-
     try {
       const res = await axios.delete(`/api/posts/delete-post/${id}`);
 
       if (res.status === 200) {
-        console.log(res.data);
         dispatch({ type: "DELETE_POST", payload: res.data.post });
       } else {
         console.log("Post not deleted , Something wents wrong");
@@ -53,7 +50,6 @@ const SinglePost = () => {
 
 
   const handleLikeDislike = async (postId) => {
-    console.log(postId);
 
     try {
       const res = await axios.post(`/api/posts/like-dislike/${postId}`, {
@@ -61,7 +57,6 @@ const SinglePost = () => {
       });
 
       if (res.status == 200) {
-        console.log(res.data.msg);
         setLikeCount(res.data.liked ? likeCount + 1 : likeCount - 1);
       } else {
         console.log("post not liked or disliked");
@@ -79,7 +74,6 @@ const SinglePost = () => {
         const res = await axios.get(`/api/posts/post/${id}`);
 
         if (res.status === 200) {
-          console.log(res.data.post);
           setCurrentPost(res.data.post);
           setLikeCount(res.data.post.likes.length);
 

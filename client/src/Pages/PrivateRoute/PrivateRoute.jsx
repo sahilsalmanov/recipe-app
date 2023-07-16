@@ -15,7 +15,6 @@ const PrivateRoute = () => {
         .then((res) => {
           if (res.status === 200 && res.data.isAuth) {
             setUserVerified(true);
-            console.log("User is verified");
           } else {
             setUserVerified(false);
 
@@ -24,8 +23,6 @@ const PrivateRoute = () => {
         });
     } else {
       setUserVerified(false);
-
-      console.log("User is not Genuine");
       navigate("/login", {replace : true})
     }
   },[])

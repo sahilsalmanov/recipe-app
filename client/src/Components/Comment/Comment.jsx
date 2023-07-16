@@ -11,18 +11,15 @@ const Comment = ({comment, post}) => {
 
   const {comments, dispatchComments} = useCommentsContext();
   const {activeUser} = useActiveUserContext();
-  console.log(comment)
   const [user, setUser] = useState();
 
   const handleCommentDelete = async (id) =>{
-    console.log(id)
     try{
 
       const res = await axios.delete(`/api/comments/delete-comment/${id}`);
 
       if(res.status === 200){
         dispatchComments({type :"DELETE_COMMENT", payload : res.data.comment});
-        console.log("Post deleted successfully")
       }
       else{
         console.log("Post not deleted")
@@ -41,9 +38,7 @@ const Comment = ({comment, post}) => {
         const res = await axios.get(`/api/auth/user/${comment?.authorId}`);
 
         if(res.status === 200){
-          console.log(res.data);
           setUser(res.data.user);
-          console.log("The comment user is " + res.data)
         }
   
       }catch(error){

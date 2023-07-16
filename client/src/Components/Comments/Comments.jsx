@@ -11,7 +11,6 @@ const Comments = ({ post }) => {
   const [comment, setComment] = useState();
   const { comments, dispatchComments } = useCommentsContext();
 
-  console.log(activeUser);
 
   const handleComment = async (e) => {
     e.preventDefault();
@@ -23,8 +22,6 @@ const Comments = ({ post }) => {
       });
 
       if (res.status === 200) {
-        console.log(res.data.msg);
-        console.log(res.data.comment);
         dispatchComments({ type: "ADD_COMMENT", payload: res.data.comment });
         setComment("");
       } else {

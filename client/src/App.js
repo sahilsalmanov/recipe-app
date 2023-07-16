@@ -29,7 +29,6 @@ function App() {
          const res = await axios.get("/api/posts/posts");
 
          if(res.status === 200){
-           console.log(res)
            dispatch(SET_POSTS(res.data.posts))
          }
 

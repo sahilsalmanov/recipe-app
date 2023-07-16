@@ -1,20 +1,14 @@
 import React, { useEffect , useState } from 'react';
 import "../Home/Home.css";
 import axios from 'axios';
-import Post from '../../Components/Post/Post';
 import Cookies from 'js-cookie';
 import BeforeSignHome from '../../Components/BeforeSignHome/BeforeSignHome';
 import { useNavigate } from 'react-router-dom';
-import ControlledCarousel from '../../Components/Carosel/ControlledCarousel';
 import BlogPostCardHome from '../../Components/BlogPostCardHome/BlogPostCardHome';
 import { useActiveUserContext } from '../../hooks/useActiveUserContext';
 import { usePostsContext } from '../../hooks/usePostsContext';
 import { useUsersContext } from '../../hooks/useUsersContext';
-import SearchResult from '../../Components/SearchResult/SearchResult';
-import Overlay from '../../Components/Overlay/Overlay';
 import { useCommentsContext } from '../../hooks/useCommentsContext';
-import PageLoader from '../PageLoader/PageLoader';
-import { SET_POSTS } from '../../redux/postsSlice';
 import Footer from '../../Components/Footer/Footer';
 
 const Home = () => {
@@ -30,7 +24,6 @@ const Home = () => {
 
 
   const filterCategory = (category) =>{
-    console.log(category)
     setCate(category);
     if(category === "all"){
       setAllPosts(posts);
@@ -54,7 +47,6 @@ const Home = () => {
               const res = await axios.post("/api/auth/active-user", {token : Cookies.get("jwt")} );
 
               if(res.status === 200){
-                console.log(res.data.user);
                 dispatchActiceUser({type : "GET_ACTIVE_USER", payload : res.data.user});
               }
               
@@ -88,7 +80,6 @@ const Home = () => {
 
           if(res.status === 200){
              dispatchUsers({type : "SET_USERS", payload : res.data.users});
-             console.log(users)
           }
         }
         catch(error){

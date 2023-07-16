@@ -2,9 +2,6 @@ const commentModel = require("../models/commentModel");
 
 const post_comment = async (req, res) =>{
     try{
-
-        console.log(req.params.id, req.body.postId, req.body.comment);
-
         const comment = await commentModel.create({
             postId : req.body.postId,
             authorId : req.params.id,
@@ -28,12 +25,10 @@ const post_comment = async (req, res) =>{
 
 const delete_comment = async (req, res) =>{
     try{
-        console.log(req.params.id)
         const comment = await commentModel.findByIdAndDelete(req.params.id);
 
         if(comment){
             res.status(200).json({msg : "comment deleted successfully", comment : comment});
-            console.log("comment deleted successfully");
         }
         else{
             res.json({msg : "Comment not deleted"})

@@ -9,17 +9,11 @@ cloudinary.config({
 
 const create_post = async (req, res) => {
   try {
-    console.log(req.body);
-
     const file = req.files.blogImage;
 
     cloudinary.uploader.upload(file.tempFilePath, async (err, result) => {
-      console.log(result);
       try {
         if (result) {
-          console.log(result.url);
-          console.log(req.body.activeUserId)
-
           const post = new postModel({
             title: req.body.title,
             person: req.body.person,
@@ -40,7 +34,6 @@ const create_post = async (req, res) => {
               .status(200)
               .json({ post: savePost, msg: "Post created successfully !!" });
 
-              console.log("Post created successfully")
           } else {
             res.json({ msg: "Something wents wrong" });
           }
@@ -94,10 +87,6 @@ const all_posts = async (req, res) => {
 
 const update_post = async (req, res) => {
 
-  console.log(req.params.id);
-  console.log(req.body)
-  console.log(req.files)
-
   try{
 
     if(req.files){
@@ -105,10 +94,8 @@ const update_post = async (req, res) => {
       const file = req.files.blogImage;
 
     cloudinary.uploader.upload(file.tempFilePath, async (err, result) => {
-      console.log(result);
       try {
         if (result) {
-          console.log(result.url);
 
           const post = await postModel.findByIdAndUpdate(req.params.id,{
             title: req.body.title,
@@ -129,7 +116,6 @@ const update_post = async (req, res) => {
               .status(200)
               .json({ post: savePost, msg: "Post created successfully !!" });
 
-              console.log("Post created successfully")
           } else {
             res.json({ msg: "Something wents wrong" });
           }
@@ -202,7 +188,6 @@ const like_dislike = async (req, res) =>{
       if(!post.likes.includes(userId)){
         await postModel.updateOne({_id : postId}, {$push : { likes : userId}});
         res.status(200).json({msg : "Post has been liked", liked : true})
-        console.log("Post has been liked")
       }
       else{
         await postModel.updateOne({ _id : postId },{ $pull: { likes : userId }});

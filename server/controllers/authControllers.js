@@ -45,7 +45,6 @@ const post_register = async (req, res) =>{
                    return res.json({msg : "User not registered , Something wents wrong !!"});
                 }
                 else{
-                    console.log("Registered Successfully !!");
                     return res.status(200).json({user : registerUser, msg : "User Created Successfully !!"});
                 }
 
@@ -91,7 +90,6 @@ const post_login = async (req, res) =>{
                 const token = jwt.sign({_id : isEmailMatched._id}, process.env.SECRET_KEY);
 
                 if(token){
-                    console.log(token)
                     res.status(200).json({msg : "Login Successfull !!", user : isEmailMatched, token : token});
                 }
                 else{
@@ -138,12 +136,9 @@ const get_user = async (req, res)=>{
     const id = req.params.id;
 
     try{
-        console.log(id);
         const user = await userModel.findById(id);
 
         if(user){
-            console.log(user);
-            console.log("Comment user is : " + user)
             res.status(200).json({user : user});
         }
         else{
@@ -159,8 +154,6 @@ const get_user = async (req, res)=>{
 const update_user = async ( req, res )=>{
 
     const { name, email, password } = req.body;
-
-    console.log(name, email, password);
 
     try{
 
@@ -232,8 +225,6 @@ const verify_user = async (req, res) =>{
 
 const active_user = async (req, res) =>{
 
-    console.log("Active user")
-
     try{
        const token = req.body.token;
 
@@ -244,7 +235,6 @@ const active_user = async (req, res) =>{
            const activeUser = await userModel.findById(user._id);
 
            if(activeUser){
-               console.log(activeUser)
                res.status(200).json({user : activeUser})
            }
            else{
@@ -273,16 +263,12 @@ const update_profile_image =  async (req, res)=>{
     cloudinary.uploader.upload(file.tempFilePath, async (err, result) => {
         try{
             if(result){
-                console.log(result);
-
                 const updateUser = await userModel.findByIdAndUpdate(userId,
                     {
                         profileImage : result.url
                     })
 
                 if(updateUser){
-                    console.log("THis is " + updateUser)
-                    console.log("Profile Updated Successfully")
                    res.status(200).json({msg : "Profile Update successfully", user : updateUser})
                 }
                 else{
