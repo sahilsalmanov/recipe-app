@@ -1,11 +1,11 @@
 
 .home{
-    width: 100%;
-    height: 101.5vh;
-    margin: 0;
-    padding: 10px 200px;
-    box-sizing: border-box;
-    background-color: #222324 ;
+  width: 100%;
+  height: 101.5vh;
+  margin: 0;
+  padding: 10px 200px;
+  box-sizing: border-box;
+  background-color: #222324 ;
 }
 
 .home_wrapper{
