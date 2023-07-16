@@ -39,7 +39,7 @@ function Footer() {
         </div>
         <div className="footer_info-forth">
           <h3>Stay in the loop</h3>
-          <p>Join our mailing list to stay in the loop with our newest for Event and concert</p>
+          <p>Join our mailing list to stay in the loop with our newest for Recipes</p>
           <span className="button">
             <input type="email" placeholder="Enter your email address"/>
             <button>Subscibe Now</button>
