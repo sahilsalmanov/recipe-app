@@ -24,6 +24,7 @@ const create_post = async (req, res) => {
             title: req.body.title,
             person: req.body.person,
             preparation: req.body.preparation,
+            cooking: req.body.cooking,
             ingredients: req.body.ingredients,
             preparationWork: req.body.preparationWork,
             description: req.body.description,
@@ -118,6 +119,7 @@ const update_post = async (req, res) => {
             category: req.body.category,
             person: req.body.person,
             preparation: req.body.preparation,
+            cooking: req.body.cooking,
             ingredients: req.body.ingredients,
             preparationWork: req.body.preparationWork,
             postImage: result.url,
@@ -153,7 +155,8 @@ const update_post = async (req, res) => {
         person: req.body.person,
         preparation: req.body.preparation,
         ingredients: req.body.ingredients,
-        preparationWork: req.body.preparationWork
+        preparationWork: req.body.preparationWork,
+        cooking: req.body.cooking
        });
 
        if(updatePost){

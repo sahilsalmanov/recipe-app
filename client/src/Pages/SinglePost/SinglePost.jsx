@@ -249,13 +249,18 @@ const SinglePost = () => {
             </div>
            
             <div className="single_post_description_wrapper">
-           <p>{currentPost ? '  Preparation time: ' + currentPost.preparation : ""}</p>
+              <p>Preparation time: </p>
+           <p>{currentPost ? currentPost.preparation + ' minute' : ""}</p>
             </div>
             <div className="single_post_description_wrapper">
-              <p>{currentPost ? '  Preparation Process: ' + currentPost.preparationWork : ""}</p>
+              <p>Cooking time: </p>
+           <p>{currentPost ? currentPost.cooking + ' minute' : ""}</p>
             </div>
             <div className="single_post_description_wrapper">
               <p>{currentPost ? '  How many people: ' + currentPost.person : ""}</p>
+            </div>
+            <div className="single_post_description_wrapper">
+              <p>{currentPost ? '  Preparation Process: ' + currentPost.preparationWork : ""}</p>
             </div>
             <div className="single_post_description_wrapper">
               <p>{currentPost ? 'Ingredients: ' + currentPost.ingredients : ""}</p>

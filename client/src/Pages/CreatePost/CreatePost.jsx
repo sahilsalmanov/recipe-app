@@ -23,6 +23,7 @@ const CreatePost = () => {
   const [description, setDescription] = useState("");
   const [preparationWork, setPreparationWork] = useState("");
   const [preparation, setPreparation] = useState("");
+  const [cooking, setCooking] = useState("");
   const [category, setCategory] = useState("Main Dishes");
   const [person, setPerson] = useState("1");
   // const [posting, setPosting] = useState(false);
@@ -44,6 +45,7 @@ const CreatePost = () => {
     formdata.append("ingredients", ingredients);
     formdata.append("preparationWork", preparationWork);
     formdata.append("preparation", preparation);
+    formdata.append("cooking", cooking);
     formdata.append("category", category);
     formdata.append("person", person);
     formdata.append("blogImage", blogImage);
@@ -169,6 +171,19 @@ const CreatePost = () => {
               setPreparation(e.target.value);
             }}
             placeholder="Enter the preparation time"
+            required
+          />
+        </div>
+        <div className="input_field">
+          <label htmlFor="#">Cooking time : </label>
+          <input
+            type="number"
+            rows={5}
+            value={cooking}
+            onChange={(e) => {
+              setCooking(e.target.value);
+            }}
+            placeholder="Enter the cooking time"
             required
           />
         </div>

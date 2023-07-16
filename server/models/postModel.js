@@ -12,6 +12,10 @@ const postSchema = new mongoose.Schema({
         type : Number,
         required : true
     },
+    cooking:{
+        type : Number,
+        required : true
+    },
     person:{
         type : String,
         required : true
