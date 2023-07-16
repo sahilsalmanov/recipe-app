@@ -8,6 +8,7 @@ import SendingLoader from "../../Components/SendingLoader/SendingLoader";
 // import CircularLoader from "../../Components/CircularLoader/CircularLoader";
 import { usePostsContext } from "../../hooks/usePostsContext";
 import { useActiveUserContext } from "../../hooks/useActiveUserContext";
+import Footer from "../../Components/Footer/Footer";
 
 const CreatePost = () => {
 
@@ -85,6 +86,7 @@ const CreatePost = () => {
   };
 
   return (
+   <>
     <div className="create_post_container">
       <form encType="multipart/form-data" className="createPostForm" onSubmit={handleFormSubmit}>
         <div className="create_post_heading_wrapper">
@@ -238,6 +240,8 @@ const CreatePost = () => {
         </div>
       </form>
     </div>
+    <Footer/>
+   </>
   );
 };
 

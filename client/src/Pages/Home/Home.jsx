@@ -16,6 +16,7 @@ import Overlay from '../../Components/Overlay/Overlay';
 import { useCommentsContext } from '../../hooks/useCommentsContext';
 import PageLoader from '../PageLoader/PageLoader';
 import { SET_POSTS } from '../../redux/postsSlice';
+import Footer from '../../Components/Footer/Footer';
 
 const Home = () => {
 
@@ -126,45 +127,48 @@ const Home = () => {
 
   return (
     
+  <>
     <div className='home'>
 
-      <div className="home_wrapper">
-            <div className="leftHome">
-                  {
-                  Cookies.get("jwt") && activeUser ? 
+<div className="home_wrapper">
+      <div className="leftHome">
+            {
+            Cookies.get("jwt") && activeUser ? 
 
-                  allPosts?.length === 0 ? <p className='posts_not_found'>No Recipes of {cate} Category</p>: 
-                  allPosts?.map((post)=>{
-                    return <BlogPostCardHome key={post._id} post={post} />
-                  })
-                   
-                  :
-                  <BeforeSignHome /> 
-                }
-            </div>
-            {activeUser?
-              <div className="rightHome">
-                 <h2 className='catogory_heading'>Categories</h2>
-                 <div className="categories_wrapper">
-                      <span className='category_item' onClick={()=> filterCategory("maindishes")}>Main Dishes</span>
-                      <span className='category_item' onClick={()=> filterCategory("desserts")}>Desserts</span>
-                      <span className='category_item' onClick={()=> filterCategory("soups")}>Soups</span>
-                      <span className='category_item' onClick={()=> filterCategory("salads")}>Salads</span>
-                      <span className='category_item' onClick={()=> filterCategory("snacks")}>Snacks</span>
-                      <span className='category_item' onClick={()=> filterCategory("beverages")}>Beverages</span>
-                      <span onClick={()=> filterCategory("cookie")}>Cookie</span>
-                      <span className='category_item' onClick={()=> filterCategory("cake")}>Cake</span>
-                      <span className='category_item' onClick={()=> filterCategory("icecream")}>Ice Cream</span>
-                      <span className='category_item' onClick={()=> filterCategory("all")}>All</span>
-                 </div>
-            </div>
+            allPosts?.length === 0 ? <p className='posts_not_found'>No Recipes of {cate} Category</p>: 
+            allPosts?.map((post)=>{
+              return <BlogPostCardHome key={post._id} post={post} />
+            })
+             
             :
-            ""
-            }
-            
+            <BeforeSignHome /> 
+          }
       </div>
-       
-    </div>
+      {activeUser?
+        <div className="rightHome">
+           <h2 className='catogory_heading'>Categories</h2>
+           <div className="categories_wrapper">
+                <span className='category_item' onClick={()=> filterCategory("maindishes")}>Main Dishes</span>
+                <span className='category_item' onClick={()=> filterCategory("desserts")}>Desserts</span>
+                <span className='category_item' onClick={()=> filterCategory("soups")}>Soups</span>
+                <span className='category_item' onClick={()=> filterCategory("salads")}>Salads</span>
+                <span className='category_item' onClick={()=> filterCategory("snacks")}>Snacks</span>
+                <span className='category_item' onClick={()=> filterCategory("beverages")}>Beverages</span>
+                <span onClick={()=> filterCategory("cookie")}>Cookie</span>
+                <span className='category_item' onClick={()=> filterCategory("cake")}>Cake</span>
+                <span className='category_item' onClick={()=> filterCategory("icecream")}>Ice Cream</span>
+                <span className='category_item' onClick={()=> filterCategory("all")}>All</span>
+           </div>
+      </div>
+      :
+      ""
+      }
+      
+</div>
+ 
+</div>
+  <Footer/>
+  </>
   
   )
 }

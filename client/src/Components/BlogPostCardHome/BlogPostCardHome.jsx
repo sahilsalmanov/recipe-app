@@ -154,6 +154,7 @@ const BlogPostCardHome = ({post}) => {
             </div>
         </div>
     </div>
+    
   )
 }
 

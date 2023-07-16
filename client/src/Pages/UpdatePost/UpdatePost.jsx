@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import Loader from "../Loader/Loader";
 import "./UpdatePost.css";
 import { usePostsContext } from "../../hooks/usePostsContext";
+import Footer from "../../Components/Footer/Footer";
 // import CircularLoader from "../../Components/CircularLoader/CircularLoader";
 
 const UpdatePost = () => {
@@ -115,6 +116,7 @@ const UpdatePost = () => {
   },[])
 
   return (
+   <>
     <div className="create_post_container">
       <form encType="multipart/form-data" className="createPostForm" onSubmit={handleFormSubmit}>
         <div className="create_post_heading">
@@ -254,6 +256,8 @@ const UpdatePost = () => {
         </div>
       </form>
     </div>
+    <Footer/>
+   </>
   );
 };
 

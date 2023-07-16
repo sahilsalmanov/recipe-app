@@ -12,6 +12,7 @@ import Comments from "../../Components/Comments/Comments";
 import { useUsersContext } from "../../hooks/useUsersContext";
 import { useActiveUserContext } from "../../hooks/useActiveUserContext";
 import { useSelector } from "react-redux";
+import Footer from "../../Components/Footer/Footer";
 
 const SinglePost = () => {
   const { dispatch } = usePostsContext();
@@ -281,6 +282,7 @@ const SinglePost = () => {
       ) : (
         <PageLoader />
       )}
+      <Footer/>
     </>
   );
 };
