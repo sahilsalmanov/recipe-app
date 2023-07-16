@@ -20,7 +20,7 @@ const UpdatePost = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("Main Dishes");
+  const [category, setCategory] = useState("maindishes");
   // const [posting, setPosting] = useState(false);
   let [blogImage, setBlogImage] = useState([]);
   const [prevImage, setPrevImage] = useState([]);
