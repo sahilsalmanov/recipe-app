@@ -91,9 +91,9 @@ const BlogPostCardHome = ({post}) => {
             <p>{post?.title}</p>
         </div>
 
-        <div className="post_home_description">
+        {/* <div className="post_home_description">
             <p>{post?.description}</p>
-        </div>
+        </div> */}
 
         <div className="post_home_bottom_wrapper">
             <div className="left">
