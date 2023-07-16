@@ -6,7 +6,6 @@ import Loader from "../Loader/Loader";
 import "./UpdatePost.css";
 import { usePostsContext } from "../../hooks/usePostsContext";
 import Footer from "../../Components/Footer/Footer";
-// import CircularLoader from "../../Components/CircularLoader/CircularLoader";
 
 const UpdatePost = () => {
   const {posts, dispatch} = usePostsContext();
@@ -21,7 +20,6 @@ const UpdatePost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("maindishes");
-  // const [posting, setPosting] = useState(false);
   let [blogImage, setBlogImage] = useState([]);
   const [prevImage, setPrevImage] = useState([]);
   const [ingredients, setIngredients] = useState("");
@@ -30,7 +28,6 @@ const UpdatePost = () => {
   const [cooking, setCooking] = useState("");
   const [person, setPerson] = useState("1");
 
-  // handle form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -58,7 +55,6 @@ const UpdatePost = () => {
           Swal.fire("Greate", res.data.msg, "success");
           dispatch({type : "UPDATE_POST", payload : res.data.post})
 
-          // setPosting(false);
           navigate("/", { replace: true });
         } else {
           console.log("Something wents wrong");
@@ -72,26 +68,8 @@ const UpdatePost = () => {
   };
 
   const handlePostingLoading = () => {
-    // setPosting(true);
+
   };
-
-  // useEffect(() => {
-
-  //  const tempPost = posts ? 
-  //  posts.map((post)=>{
-  //        if(post._id === id)
-  //        {
-  //         return post;
-  //        }
-        
-  //  })
-  //  :
-  //  ""
-
-  //  setPost(tempPost);
-  //  console.log(post)
-
-  // }, [])
 
   const loadPost = async () =>{
     try{
@@ -252,7 +230,6 @@ const UpdatePost = () => {
           <button onClick={handlePostingLoading}>
            Update Recipe
           </button>
-          {/* {posting ? <>Posting... <CircularLoader /></> : ""} */}
         </div>
       </form>
     </div>

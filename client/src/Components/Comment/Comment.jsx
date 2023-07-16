@@ -14,7 +14,6 @@ const Comment = ({comment, post}) => {
   console.log(comment)
   const [user, setUser] = useState();
 
-  // handle comment delete
   const handleCommentDelete = async (id) =>{
     console.log(id)
     try{

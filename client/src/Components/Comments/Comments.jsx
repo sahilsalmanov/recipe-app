@@ -62,9 +62,6 @@ const Comments = ({ post }) => {
 
       <div className="comments_wrapper">
         {
-          // comments?.filter((comment) => comment.authorId === post?.authorId).reverse()?.map((comment)=>{
-          //   return <Comment comment={comment} key={comment._id} />
-
           comments?.filter((comment) => comment.postId === post?._id).length !==
           0 ? (
             comments

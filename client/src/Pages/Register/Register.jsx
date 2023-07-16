@@ -14,7 +14,6 @@ const Register = () => {
   const [cPassword, setCpassword] = useState("");
   const [sending, setSending] = useState(false);
 
-  // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);

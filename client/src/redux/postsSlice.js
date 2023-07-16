@@ -30,16 +30,6 @@ export const postsSlice = createSlice({
         SINGLEPOST_ID : (state, action) => {
             state.singlePostId = action.payload
         }
-
-        // UPDATE_POST : (state, action) => {
-        //     state.posts = state.posts.map((excercise) => {
-        //         if(excercise._id === action.payload._id){
-        //             return {...excercise, excercise:action.payload.excercise, reps : action.payload.reps}
-        //         }
-
-        //         return excercise;
-        //     })
-        // }
     }
 })
 

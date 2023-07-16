@@ -4,8 +4,6 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import "./CreatePost.css";
 import SendingLoader from "../../Components/SendingLoader/SendingLoader";
-
-// import CircularLoader from "../../Components/CircularLoader/CircularLoader";
 import { usePostsContext } from "../../hooks/usePostsContext";
 import { useActiveUserContext } from "../../hooks/useActiveUserContext";
 import Footer from "../../Components/Footer/Footer";
@@ -27,13 +25,11 @@ const CreatePost = () => {
   const [cooking, setCooking] = useState("");
   const [category, setCategory] = useState("maindishes");
   const [person, setPerson] = useState("1");
-  // const [posting, setPosting] = useState(false);
   let [blogImage, setBlogImage] = useState([]);
   const [prevImage, setPrevImage] = useState([]);
   const [imageSelected, setImageSelected] = useState(false)
   const [sending, setSending] = useState(false);
 
-  // handle form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -63,12 +59,11 @@ const CreatePost = () => {
 
           setSending(false);
 
-          dispatch({type :"CREATE_POST", payload : res.data.post}); // dispathing the global posts state
+          dispatch({type :"CREATE_POST", payload : res.data.post}); 
 
 
           Swal.fire("Greate", res.data.msg, "success");
 
-          // setPosting(false);
           navigate("/", { replace: true });
         } else {
           console.log("Something wents wrong");
@@ -82,7 +77,6 @@ const CreatePost = () => {
   };
 
   const handlePostingLoading = () => {
-    // setPosting(true);
   };
 
   return (

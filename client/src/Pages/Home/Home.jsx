@@ -10,7 +10,6 @@ import BlogPostCardHome from '../../Components/BlogPostCardHome/BlogPostCardHome
 import { useActiveUserContext } from '../../hooks/useActiveUserContext';
 import { usePostsContext } from '../../hooks/usePostsContext';
 import { useUsersContext } from '../../hooks/useUsersContext';
-// import { useCommentsContext } from "../../hooks/useCommentsContext";
 import SearchResult from '../../Components/SearchResult/SearchResult';
 import Overlay from '../../Components/Overlay/Overlay';
 import { useCommentsContext } from '../../hooks/useCommentsContext';
@@ -23,16 +22,13 @@ const Home = () => {
   const navigate = useNavigate();
   const {comments, dispatchComments} = useCommentsContext();
 
-  const {posts, dispatch} = usePostsContext(); // values are destructuring
+  const {posts, dispatch} = usePostsContext(); 
   const {activeUser, dispatchActiceUser} = useActiveUserContext();
   const {users, dispatchUsers} = useUsersContext();
-  // const {comments, dispatchComments} = useCommentsContext();
-
   const [allPosts, setAllPosts] = useState();
   const [cate, setCate] = useState();
 
 
-  // handle filter category
   const filterCategory = (category) =>{
     console.log(category)
     setCate(category);
@@ -51,7 +47,6 @@ const Home = () => {
   useEffect(()=>{
       navigate("/", {replace : true});
 
-        // fetch active user
       const fetchActiveUser = async () =>{
         try{
 
@@ -70,7 +65,6 @@ const Home = () => {
           }
       }
 
-        // fetching all posts 
         const fetchPosts = async () =>{
           try{
             const res = await axios.get("/api/posts/posts");
@@ -88,7 +82,6 @@ const Home = () => {
           }
       }
 
-      // fetch users
       const fetchUsers = async () =>{
         try{
           const res = await axios.get("/api/auth/all-users");
@@ -104,7 +97,6 @@ const Home = () => {
       }
 
 
-      // fetch comments
       const fetchComments = async () =>{
         try{
           const res = await axios.get("/api/comments/all-comments");

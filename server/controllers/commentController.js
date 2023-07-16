@@ -1,6 +1,5 @@
 const commentModel = require("../models/commentModel");
 
-// post comment
 const post_comment = async (req, res) =>{
     try{
 
@@ -27,7 +26,6 @@ const post_comment = async (req, res) =>{
 }
 
 
-// delete comment
 const delete_comment = async (req, res) =>{
     try{
         console.log(req.params.id)
@@ -48,7 +46,6 @@ const delete_comment = async (req, res) =>{
 }
 
 
-// all comments
 const all_comments = async (req, res) =>{
    try{
     const comments = await commentModel.find();

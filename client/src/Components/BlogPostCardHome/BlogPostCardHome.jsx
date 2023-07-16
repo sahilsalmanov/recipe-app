@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import {DeleteIcon} from '@mui/icons-material/';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import "./BlogPostCardHome.css";
@@ -27,7 +26,6 @@ const BlogPostCardHome = ({post}) => {
     const [nonLiked, setNonLiked] = useState("far fa-heart");
     const [likeStyle, setLikeStyle] = useState("far fa-heart");
 
-    // handle setting post id
     const handleSettingId = async (currentPost_Id) =>{
        try{
 
@@ -36,7 +34,6 @@ const BlogPostCardHome = ({post}) => {
        }
     }
 
-    // handle delete post
     const handleDelete = async (id) =>{
         console.log(id)
 
@@ -56,7 +53,6 @@ const BlogPostCardHome = ({post}) => {
         }
     }
 
-    // handle like dislike
     const handleLikeDislike = async (postId) =>{
         console.log(postId)
 
@@ -91,21 +87,9 @@ const BlogPostCardHome = ({post}) => {
             <p>{post?.title}</p>
         </div>
 
-        {/* <div className="post_home_description">
-            <p>{post?.description}</p>
-        </div> */}
-
         <div className="post_home_bottom_wrapper">
             <div className="left">
                 <div className="like">
-                    {/* {
-                       post?.likes.includes(activeUser._id) ?
-                      
-                       <FavoriteIcon  size="large" className='like_icon liked' onClick={()=> handleLikeDislike(post._id)}/>
-                       :
-                       <FavoriteBorderIcon size="large" className='like_icon' onClick={()=> handleLikeDislike(post._id)} />
-                    } */}
-
                     {
                          <p
                          className='like_actual_icon'

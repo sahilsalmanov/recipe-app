@@ -17,14 +17,13 @@ const Navbar = () => {
   const [activeSearch, setActiveSearch] = useState();
   const [searchResultContainerStyle, setSearchResultContainerStyle] =
     useState("hideSearch");
-  // handle logout
+
   const handleLogout = () => {
     Cookies.remove("jwt");
     navigate("/", { replace: true });
     window.location.reload();
   };
 
-  //handle search
   const handleSearch = () => {
     if (searchResultContainerStyle === "hideSearch") {
       setSearchResultContainerStyle("showSearch");
@@ -69,7 +68,6 @@ const Navbar = () => {
               onFocus={handleSearch}
             />
             <SearchIcon className="search-icon-nav" />
-            {/* <i className="fa-solid fa-magnifying-glass search-icon-nav"></i> */}
           </div>
         </div>
       ) : (
@@ -81,8 +79,6 @@ const Navbar = () => {
           {activeUser ? (
             <>
               <Link to="/" className='ml'>Home</Link>
-              {/* <Link to="/categories">Categories</Link> */}
-              {/* <Link to="/about">About</Link> */}
               <Link to="/create-post" className='ml'>Create Recipe</Link>
               <Link to="/" onClick={handleLogout} className='ml'>
                 Logout

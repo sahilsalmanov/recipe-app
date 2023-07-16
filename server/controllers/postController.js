@@ -57,7 +57,6 @@ const create_post = async (req, res) => {
   }
 };
 
-// get post
 const get_post = async (req, res) => {
 
   const id = req.params.id;
@@ -77,7 +76,6 @@ const get_post = async (req, res) => {
   }
 };
 
-// all posts
 const all_posts = async (req, res) => {
   try{
 
@@ -94,7 +92,6 @@ const all_posts = async (req, res) => {
 };
 
 
-// update post
 const update_post = async (req, res) => {
 
   console.log(req.params.id);
@@ -146,7 +143,7 @@ const update_post = async (req, res) => {
     });
 
     }
-    else{ // image not updated
+    else{
 
        const updatePost = await postModel.findByIdAndUpdate(req.params.id,{
         title : req.body.title,
@@ -175,7 +172,6 @@ const update_post = async (req, res) => {
 
 };
 
-// delete post
 const delete_post = async (req, res) => {
   try{
     const deletePost = await postModel.findByIdAndDelete(req.params.id);
@@ -194,7 +190,6 @@ const delete_post = async (req, res) => {
 };
 
 
-// handle like dislike
 const like_dislike = async (req, res) =>{
   try{
     const postId = req.params.id;
@@ -204,7 +199,6 @@ const like_dislike = async (req, res) =>{
 
     if(post){
       
-      // like
       if(!post.likes.includes(userId)){
         await postModel.updateOne({_id : postId}, {$push : { likes : userId}});
         res.status(200).json({msg : "Post has been liked", liked : true})

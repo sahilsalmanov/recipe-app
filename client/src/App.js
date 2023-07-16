@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 
-// other imports
+
 import Navbar from "./Components/Navbar/Navbar";
 import Login from "../src/Pages/Login/Login";
 import Register from "../src/Pages/Register/Register";
@@ -20,7 +20,6 @@ import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import {useDispatch,useSelector} from "react-redux";
 import { SET_POSTS } from "./redux/postsSlice";
 
-// contexts
 
 function App() {
    const dispatch = useDispatch();

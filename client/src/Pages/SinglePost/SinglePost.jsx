@@ -21,8 +21,6 @@ const SinglePost = () => {
   const { activeUser } = useActiveUserContext();
   
   const {id} = useParams();
-  // const location = useLocation();
-  // const id = location.pathname.split("/")[2];
   
   const [currentPost, setCurrentPost] = useState();
   const [postAuthor, setPostAuthor] = useState();
@@ -34,7 +32,6 @@ const SinglePost = () => {
   const currentBlogPost = useSelector((state) => state.post.currentPost);
 
 
-  // handle delete post
   const handleDelete = async (id) => {
 
     console.log(id);
@@ -53,28 +50,8 @@ const SinglePost = () => {
     }
   };
 
-  // useEffect(()=>{
-  //   const fetchPostAuthor = async () =>{
-  //     try{
-  //         const res = await axios.get(`/api/auth/user/${currentPost?.authorId}`);
 
-  //         if(res.status === 200){
-  //         console.log(res.data.user)
-  //         setPostAuthor(res.data.user);
-  //         }
-  //         else{
-  //           console.log("User not found");
-  //         }
-  //     }
-  //     catch(error){
-  //       console.log(error.message);
-  //     }
-  //   }
 
-  //    fetchPostAuthor();
-  //  },[])
-
-  // handle like dislike
   const handleLikeDislike = async (postId) => {
     console.log(postId);
 
@@ -96,7 +73,6 @@ const SinglePost = () => {
 
   useEffect(() => {
 
-    // fetch current post
     const fetchCurrentPost = async () => {
       try {
 
@@ -191,27 +167,8 @@ const SinglePost = () => {
               {postAuthor ? <p>{format(postAuthor.updatedAt)}</p> : ""}
             </div>
             <div className="likes_div">
-              {/* <div className="like">
-                    {
-                       currentPost?.likes.includes(activeUser?._id) ?
-                      
-                       <FavoriteIcon  size="large" className='like_icon liked' onClick={()=> handleLikeDislike(currentPost?._id)}/>
-                       :
-                       <FavoriteBorderIcon size="large" className='like_icon' onClick={()=> handleLikeDislike(currentPost?._id)} />
-                    }
-                    
-                    <span className="like_count">{currentPost?.likes.length}</span>
-                </div> */}
 
               <div className="like">
-                {/* {
-                       post?.likes.includes(activeUser._id) ?
-                      
-                       <FavoriteIcon  size="large" className='like_icon liked' onClick={()=> handleLikeDislike(post._id)}/>
-                       :
-                       <FavoriteBorderIcon size="large" className='like_icon' onClick={()=> handleLikeDislike(post._id)} />
-                    } */}
-
                 {
                   <p
                     className="like_actual_icon"
@@ -275,7 +232,6 @@ const SinglePost = () => {
               <p className="redtext"> Ingredients: </p>
               <p>{currentPost ? currentPost.ingredients : ""}</p>
             </div>
-            {/* comments senction */}
             <Comments post={currentPost} />
           </div>
         </div>

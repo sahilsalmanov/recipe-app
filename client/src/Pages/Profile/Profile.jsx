@@ -27,7 +27,7 @@ const Profile = () => {
 
   const posts = useSelector((state)=> state.post.posts);
 
-  // handle delete post
+
   const handleDelete = async (id) => {
     console.log(id);
 
@@ -45,7 +45,7 @@ const Profile = () => {
     }
   };
 
-  // handle form submit
+
   const handleSumbit = (e) => {
     e.preventDefault();
     let formdata = new FormData();

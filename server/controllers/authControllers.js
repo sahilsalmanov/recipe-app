@@ -11,14 +11,12 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// get register
+
 const get_register = async (req, res) =>{
     res.send("Hello from the register page !!");
 }
 
-// #####################################################################################################
 
-// post register
 const post_register = async (req, res) =>{
    
     const { name, email, password, cPassword, activeUserId } = req.body;
@@ -30,7 +28,7 @@ const post_register = async (req, res) =>{
           
             if(password === cPassword){
                
-                // hash the password
+               
                 const salt = bcrypt.genSaltSync();
                 
                 const hashedPassword = bcrypt.hashSync(password, salt);
@@ -71,19 +69,12 @@ const post_register = async (req, res) =>{
     
 }
 
-// #####################################################################################################
 
-
-// get login
 const get_login = async (req, res) =>{
     res.send("Hello from the login page !!");
 }
 
 
-// #####################################################################################################
-
-
-// post login
 const post_login = async (req, res) =>{
 
     const { email , password } = req.body;
@@ -97,7 +88,6 @@ const post_login = async (req, res) =>{
 
             if(isPasswordMatched){
                 
-                // create jwt token
                 const token = jwt.sign({_id : isEmailMatched._id}, process.env.SECRET_KEY);
 
                 if(token){
@@ -125,9 +115,6 @@ const post_login = async (req, res) =>{
 }
 
 
-// #####################################################################################################
-
-// get all users
 const get_all_users = async(req, res) =>{
 
     try{
@@ -147,8 +134,6 @@ const get_all_users = async(req, res) =>{
 }
 
 
-// #####################################################################################################
-// get single user
 const get_user = async (req, res)=>{
     const id = req.params.id;
 
@@ -171,8 +156,6 @@ const get_user = async (req, res)=>{
 }
 
 
-// ####################################################################################################4
-// update user
 const update_user = async ( req, res )=>{
 
     const { name, email, password } = req.body;
@@ -201,8 +184,6 @@ const update_user = async ( req, res )=>{
 }
 
 
-// ###########################################################################################
-// delete user
 const delete_user = async (req, res) =>{
 
     const id = req.params.id;
@@ -224,15 +205,12 @@ const delete_user = async (req, res) =>{
 }
 
 
-// ##########################################################################################
-// verify user
 const verify_user = async (req, res) =>{
     try {
 
         if (req.body.token) {
             const token = req.body.token;
 
-            // verify token
             const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
 
             if (verifyToken) {
@@ -252,7 +230,6 @@ const verify_user = async (req, res) =>{
     }
 }
 
-// active user
 const active_user = async (req, res) =>{
 
     console.log("Active user")
@@ -286,7 +263,6 @@ const active_user = async (req, res) =>{
 }
 
 
-// ###################################################################################
 const update_profile_image =  async (req, res)=>{
    try{
 
