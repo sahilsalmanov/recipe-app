@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { findByIdAndUpdate } = require("../models/userModel");
 
 const cloudinary = require("cloudinary").v2;
 
