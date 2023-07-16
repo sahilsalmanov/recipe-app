@@ -25,7 +25,7 @@ const CreatePost = () => {
   const [preparationWork, setPreparationWork] = useState("");
   const [preparation, setPreparation] = useState("");
   const [cooking, setCooking] = useState("");
-  const [category, setCategory] = useState("Main Dishes");
+  const [category, setCategory] = useState("maindishes");
   const [person, setPerson] = useState("1");
   // const [posting, setPosting] = useState(false);
   let [blogImage, setBlogImage] = useState([]);
