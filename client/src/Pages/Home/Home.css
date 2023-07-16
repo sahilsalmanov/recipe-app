@@ -1,6 +1,6 @@
 
 .home{
-    width: 100vw;
+    width: 98vw;
     height: 91.5vh;
     margin: 0;
     padding: 10px 200px;
@@ -15,7 +15,7 @@
 .home_wrapper .leftHome{
   display: flex;
   flex-wrap: wrap;
-    flex: 3;
+    flex: 7;
     height: 90vh;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -40,7 +40,7 @@
   }
 
 .home_wrapper .rightHome{
-    flex: 1;
+    flex: 2;
     margin-left: 10px;
 }
 
