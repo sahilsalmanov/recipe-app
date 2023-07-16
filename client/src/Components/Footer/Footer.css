@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=DynaPuff&family=Mulish:wght@200&family=Prompt:wght@100&display=swap");
 * {
   margin: 0;
@@ -12,22 +13,20 @@ html {
 
 .footer {
   width: 100%;
-  background-color: #222324 !important;
-  font-family: "DM Sans", sans-serif;
-  font-size: 1.4rem;
-  color: white;
+  background-color:  #1a1b1b  !important;
+  font-family: 'Roboto', sans-serif;  font-size: 1.4rem;
+  color: #c99e39;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 3rem;
+  margin-top: 0rem;
 }
 .footer li {
   margin-bottom: 1rem;
 }
 .footer li,
 .footer p {
-  font-family: "Mulish", sans-serif;
-}
+  font-family: 'Roboto', sans-serif;}
 .footer h3 {
   margin-bottom: 3rem;
 }
