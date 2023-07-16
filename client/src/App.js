@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
@@ -9,15 +8,12 @@ import Login from "../src/Pages/Login/Login";
 import Register from "../src/Pages/Register/Register";
 import Home from "../src/Pages/Home/Home";
 import CreatePost from "./Pages/CreatePost/CreatePost";
-import Categories from "./Pages/Categories/Categories";
-import About from "./Pages/About/About";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import Profile from "./Pages/Profile/Profile";
-import UpdateProfile from "./Pages/UpdateProfile/UpdateProfile";
 import SinglePost from "./Pages/SinglePost/SinglePost";
 import UpdatePost from "./Pages/UpdatePost/UpdatePost";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
-import {useDispatch,useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import { SET_POSTS } from "./redux/postsSlice";
 
 
@@ -62,18 +58,6 @@ function App() {
            <Route path="/profile/:id" element={ <PrivateRoute /> }>
               <Route path="/profile/:id" element={ <Profile />}></Route>
            </Route>
-          
-           <Route path="/about" element={ <PrivateRoute /> }>
-              <Route path="/about" element={ <About />}></Route>
-           </Route>
-
-           <Route path="/categories" element={ <PrivateRoute /> }>
-             <Route path="/categories" element={ <Categories />}></Route>
-           </Route>
-
-           <Route path="/update-profile" element={ <PrivateRoute /> }>
-              <Route path="/update-profile" element={ <UpdateProfile />}></Route>
-           </Route>
 
            <Route path="/post/:id" element={ <PrivateRoute /> }> 
               <Route path="/post/:id" element={ <SinglePost />}></Route>
@@ -81,7 +65,6 @@ function App() {
 
            <Route path="*" element={<PageNotFound />} />
        </Routes>
-
 
     </div>
   );

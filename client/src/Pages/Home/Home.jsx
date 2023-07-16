@@ -15,7 +15,6 @@ const Home = () => {
 
   const navigate = useNavigate();
   const {comments, dispatchComments} = useCommentsContext();
-
   const {posts, dispatch} = usePostsContext(); 
   const {activeUser, dispatchActiceUser} = useActiveUserContext();
   const {users, dispatchUsers} = useUsersContext();
@@ -35,7 +34,6 @@ const Home = () => {
    
   }
 
-  
 
   useEffect(()=>{
       navigate("/", {replace : true});
@@ -108,12 +106,11 @@ const Home = () => {
 
   },[dispatch])
 
-  return (
-    
-  <>
+  return (   
+    <>
     <div className='home'>
 
-<div className="home_wrapper">
+    <div className="home_wrapper">
       <div className="leftHome">
             {
             Cookies.get("jwt") && activeUser ? 
@@ -137,7 +134,7 @@ const Home = () => {
                 <span className='category_item' onClick={()=> filterCategory("salads")}>Salads</span>
                 <span className='category_item' onClick={()=> filterCategory("snacks")}>Snacks</span>
                 <span className='category_item' onClick={()=> filterCategory("beverages")}>Beverages</span>
-                <span onClick={()=> filterCategory("cookie")}>Cookie</span>
+                <span className='category_item' onClick={()=> filterCategory("cookie")}>Cookie</span>
                 <span className='category_item' onClick={()=> filterCategory("cake")}>Cake</span>
                 <span className='category_item' onClick={()=> filterCategory("icecream")}>Ice Cream</span>
                 <span className='category_item' onClick={()=> filterCategory("all")}>All</span>
@@ -147,11 +144,11 @@ const Home = () => {
       ""
       }
       
-</div>
+    </div>
  
-</div>
-  <Footer/>
-  </>
+    </div>
+   <Footer/>
+   </>
   
   )
 }

@@ -8,7 +8,6 @@ import Footer from "../../Components/Footer/Footer";
 
 const UpdatePost = () => {
   const {posts, dispatch} = usePostsContext();
-  const [post, setPost] = useState({});
 
   const { id } = useParams();
 
@@ -19,7 +18,6 @@ const UpdatePost = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("maindishes");
   let [blogImage, setBlogImage] = useState([]);
-  const [prevImage, setPrevImage] = useState([]);
   const [ingredients, setIngredients] = useState("");
   const [preparationWork, setPreparationWork] = useState("");
   const [preparation, setPreparation] = useState("");
@@ -41,8 +39,7 @@ const UpdatePost = () => {
     formdata.append("cooking", cooking);
     formdata.append("person", person);
 
-    axios
-      .patch(`/api/posts/update-post/${id}`, formdata, {
+    axios.patch(`/api/posts/update-post/${id}`, formdata, {
         headers: {
           "Content-type": "multipart/form-data",
         },
@@ -76,6 +73,11 @@ const UpdatePost = () => {
           setTitle(res.data.post.title);
           setDescription(res.data.post.description);
           setCategory(res.data.post.category);
+          setPerson(res.data.post.person)
+          setPreparation(res.data.post.preparation)
+          setCooking(res.data.post.cooking)
+          setPreparationWork(res.data.post.preparationWork)
+          setIngredients(res.data.post.ingredients)
        }
        else{
         console.log("Something wents wrong");

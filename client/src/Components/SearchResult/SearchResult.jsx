@@ -1,7 +1,6 @@
 import React from 'react'
 import "./SearchResult.css"
 import { usePostsContext } from '../../hooks/usePostsContext'
-import Post from '../Post/Post'
 import BlogPostCardHome from '../BlogPostCardHome/BlogPostCardHome'
 
 const SearchResult = ({searchValue}) => {

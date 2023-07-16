@@ -12,7 +12,6 @@ const CreatePost = () => {
 
   const { dispatch } = usePostsContext();
   const { activeUser } = useActiveUserContext();
-
   const navigate = new useNavigate();
 
   const [title, setTitle] = useState("");
@@ -115,7 +114,7 @@ const CreatePost = () => {
         <div className="input_field">
           <label htmlFor="#">Select post category : </label>
           <select
-            name="cars"
+            name="category"
             onChange={(e) => {
               const selectedCategory = e.target.value;
               setCategory(selectedCategory);
@@ -136,7 +135,7 @@ const CreatePost = () => {
         <div className="input_field">
           <label htmlFor="#">Person : </label>
           <select
-            name="cars"
+            name="person"
             onChange={(e) => {
               const selectedPerson = e.target.value;
               setPerson(selectedPerson);

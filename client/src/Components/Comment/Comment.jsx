@@ -54,7 +54,7 @@ const Comment = ({comment, post}) => {
     <div className='comment'>
       <div className="left">
         <Link to={`/profile/${user?._id}`}>
-          <img src={user? user.profileImage : `https://social-media-ankush.herokuapp.com/public/Images/user (1).png`} alt="comment Img" />
+          <img src={user? user.profileImage : `https://www.freepik.com/free-photos-vectors/profile`} alt="comment Img" />
         </Link>
       </div>
 
