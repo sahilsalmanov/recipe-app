@@ -19,7 +19,6 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  box-shadow: 3px -4px 21px #0a075f;
   margin-top: 3rem;
 }
 .footer li {
