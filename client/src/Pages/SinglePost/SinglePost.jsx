@@ -245,25 +245,34 @@ const SinglePost = () => {
             </div>
 
             <div className="single_post_description_wrapper">
+              <p className="redtext">Description</p>
               <p>{currentPost ? currentPost.description : ""}</p>
             </div>
            
-            <div className="single_post_description_wrapper">
-              <p>Preparation time: </p>
-           <p>{currentPost ? currentPost.preparation + ' minute' : ""}</p>
+           <div className="general">
+           <div className="single_post_description_wrapper">
+              <p className="redtext">Preparation time: </p>
+           <p className="ordinary">{currentPost ? currentPost.preparation + ' minute' : ""}</p>
+           <div className="reddiv"></div>
             </div>
             <div className="single_post_description_wrapper">
-              <p>Cooking time: </p>
-           <p>{currentPost ? currentPost.cooking + ' minute' : ""}</p>
+              <p className="redtext">Cooking time: </p>
+           <p className="ordinary">{currentPost ? currentPost.cooking + ' minute' : ""}</p>
+           <div className="reddiv"></div>
             </div>
             <div className="single_post_description_wrapper">
-              <p>{currentPost ? '  How many people: ' + currentPost.person : ""}</p>
+              <p className="redtext">Person number: </p>
+              <p className="ordinary">{currentPost ?  currentPost.person + ' person' : ""}</p>
+              <div className="reddiv"></div>
+            </div>
+           </div>
+            <div className="single_post_description_wrapper">
+              <p className="redtext">Preparation Process: </p>
+              <p>{currentPost ? currentPost.preparationWork : ""}</p>
             </div>
             <div className="single_post_description_wrapper">
-              <p>{currentPost ? '  Preparation Process: ' + currentPost.preparationWork : ""}</p>
-            </div>
-            <div className="single_post_description_wrapper">
-              <p>{currentPost ? 'Ingredients: ' + currentPost.ingredients : ""}</p>
+              <p className="redtext"> Ingredients: </p>
+              <p>{currentPost ? currentPost.ingredients : ""}</p>
             </div>
             {/* comments senction */}
             <Comments post={currentPost} />
