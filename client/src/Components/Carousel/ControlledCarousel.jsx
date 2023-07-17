@@ -39,12 +39,8 @@ function ControlledCarousel() {
                       </div>
                       
                       
-                      <p>{post.name}</p>
-                      <p className="blog-description-carousel">{post.description}</p>
-
-                      
-                </div>   
-              
+                      <p>{post.name}</p>    
+                </div>
               </Carousel.Item>
             )
           })

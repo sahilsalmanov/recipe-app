@@ -3,16 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
     padding-bottom: 100px;
-    background-color: #222324 ;
-    color: rgb(203, 211, 168);
-    font-size: 13px;
-
 }
 
 .single_blog_post{
     width: 60%;
-    margin-top: 20px;
     padding: 15px 30px;
     border: 1px solid rgba(128, 128, 128, 0.255);
 }
@@ -96,12 +92,10 @@
     margin: 10px 0;
     margin-top: 20px;
 }
-.redtext {
-    color: rgb(208, 133, 48);
-     font-weight: 600;
-     font-size: 20px;
-    
-
+.red-text {
+    color: brown;
+    font-weight: 600;
+    font-size: 20px;
 }
 .ordinary {
    margin-left: 30px;
@@ -109,7 +103,7 @@
 .red-content {
     width: 150px;
     height: 7px;
-    background-color: rgb(208, 133, 48);
+    background-color: brown;
 }
 
 

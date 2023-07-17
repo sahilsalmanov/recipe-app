@@ -78,7 +78,7 @@ const Login = () => {
 
         <div className="bottom_form">
           <p>
-            Don't have an account ? <Link style={{color:"#c99e39 ",fontWeight:"bold"}} to="/register">Sign Up</Link>
+            Don't have an account ? <Link to="/register">Sign Up</Link>
           </p>
         </div>
       </form>
