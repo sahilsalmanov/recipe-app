@@ -101,7 +101,7 @@ const Register = () => {
         </div>
 
         <div className="bottom_form">
-          <p>Already have an account ? <Link to="/login">Sign In</Link></p>
+          <p>Already have an account ? <Link className="bottom-signup" to="/login">Sign In</Link></p>
         </div>
       </form>
     </div>

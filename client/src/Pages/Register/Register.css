@@ -5,14 +5,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(119, 235, 255, 0.874);
+    background-color: #222324 ;
 }
 
 .register form{
     width: 400px;
-    background-color: white;
+    background-color: gray;
     padding: 10px 25px;
     padding-bottom: 10px;
+    border-radius: 15px;
 }
 .register_heading_wrapper{
     display: flex;
@@ -25,10 +26,12 @@
     padding: 5px 0;
     display: inline-block;
     border-bottom: 2px solid gray;
+    font-size: 30px;
 }
 
 .register .input_filed{
     margin-bottom: 15px;
+    font-size: 15px;
 }
 
 .register .input_filed label{
@@ -66,7 +69,7 @@
     font-weight: 600;
     color: white;
     border: none;
-    background-color: rgb(0, 133, 133) ;
+    background-color: #c99e39 ;
     letter-spacing: 1px;
     cursor: pointer;
     border-radius: 5px;
@@ -77,4 +80,9 @@
 .bottom_form{
     text-align: center;
     margin-top: 10px;
+    font-size: 15px;
+}
+.bottom-signup {
+    color: #c99e39;
+    font-size: 15px;
 }

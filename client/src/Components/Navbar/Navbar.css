@@ -1,14 +1,13 @@
 .navbar{
     margin:0;
-    height: 60px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 200px;
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.115);
-    background-color: grey;
-}
+    background-color: #222324 ;}
 
 .navbar a{
     text-decoration: none;
@@ -62,8 +61,7 @@
 }
 
 .navbar .menu-link .ml:hover{
-    border-bottom: 2px solid rgb(0, 133, 133);
-}
+    border-bottom: 2px solid rgb(198, 192, 27);}
 
 .hideSearch{
     display: none;

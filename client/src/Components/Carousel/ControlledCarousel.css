@@ -26,8 +26,8 @@
 
 .carousel_item_title{
     font-weight: 600;
-    font-size: 25px;
-    color: white;
+    font-size: 20px;
+    color: #c99e39;
 }
 
 .blog-description-carousel{
@@ -43,17 +43,18 @@
 
 .carousel_item_btn{
     position: absolute;
-    bottom: 70px;
-    left: 50%;
+    bottom: 40px;
+    left: 50%; 
     transform: translateX(-50%);
-    padding: 7px 30px;
+    padding: 15px 40px;
     background-color: transparent;
     color: white;
     font-weight: 600;
-    background-color: rgba(45, 255, 255, 0.76);
-    border: 2px solid rgb(232, 232, 232);
+    background-color: #c99e39;
+    border: 2px solid #dac085;
     border-radius: 30px;
     transition: .3s ease;
+    font-size: 13px;
 }
 
 .carousel_item_btn:hover{

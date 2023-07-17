@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(119, 235, 255, 0.874);
+    background-color:  #c99e39;
     padding-top: 30px;
 }
 
@@ -13,6 +13,7 @@
     width: 500px;
     background-color: white;
     padding: 15px 30px;
+    border-radius: 15px;
 }
 
 .create_post_heading_wrapper{
@@ -77,7 +78,7 @@
     font-weight: 600;
     color: white;
     border: none;
-    background-color: rgb(0, 133, 133) ;
+    background-color: gray;
     letter-spacing: 1px;
     cursor: pointer;
     border-radius: 5px;
