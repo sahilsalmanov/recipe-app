@@ -198,7 +198,7 @@ const UpdatePost = () => {
         </div>
 
         <div className="input_field">
-          <label htmlFor="#">Enter post preparationWork : </label>
+          <label htmlFor="#">Enter post preparation process : </label>
           <textarea
             type="text"
             rows={5}
